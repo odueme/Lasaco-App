@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget{
          const SizedBox(height: 20.0),
          const Text(
             'Get comprehensive coverage and financial protection for your assets and live with peace of mind.', 
-            style: TextStyle(fontSize: 19, color:Color(0xFF7E848D), height: 1.5),
+            style: TextStyle(fontSize: 16, color:Color(0xFF7E848D), height: 1.5),
             textAlign: TextAlign.center,
             ),
             const SizedBox(height: 40),
@@ -92,7 +92,7 @@ class InsurancePage extends StatelessWidget{
          const SizedBox(height: 15.0),
          const Text(
             "Life Insurance Secure your loved ones' future with reliable life insurance. Protect what matters most to you and yours.", 
-            style: TextStyle(fontSize: 19, color:Color(0xFF7E848D), height: 1.3),
+            style: TextStyle(fontSize: 16, color:Color(0xFF7E848D), height: 1.3),
             textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
