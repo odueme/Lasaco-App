@@ -38,6 +38,7 @@
     # Use with the CupertinoIcons class for iOS style icons.
     cupertino_icons: ^1.0.6
     flutter_native_splash: ^2.4.0
+    pin_plus_keyboard: ^2.0.6
 
   dev_dependencies:
     flutter_test:

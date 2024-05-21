@@ -1,4 +1,5 @@
 
+import 'package:algora_design/password.dart';
 import 'package:flutter/material.dart';
 
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
     
         '/insurance': (context) => const InsurancePage(),
         '/signup': (context) => const SignUp(),
+        '/password': (context) => const Password()
       },
   
     );
@@ -130,6 +132,7 @@ class InsurancePage extends StatelessWidget{
 
     class _SignUpState extends State<SignUp>{
       bool agree = false;
+      bool signupPressed = false;
 
      
 
@@ -145,11 +148,7 @@ class InsurancePage extends StatelessWidget{
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                
-             
-                  
-          
+              children: [   
                 TextButton(
                   onPressed: (){
                      Navigator.pushNamed(context, '/insurance');
@@ -328,7 +327,7 @@ class InsurancePage extends StatelessWidget{
                ]
               ),
             
-                  Text(agree? '' : 'PLease accept condtions', style: const TextStyle(color: Colors.red)),
+                 Text(signupPressed&&!agree? 'Please accept condition' : '', style: const TextStyle(color: Colors.red)),
 
              const SizedBox(height: 40),
 
@@ -341,13 +340,21 @@ class InsurancePage extends StatelessWidget{
               )
             ),
               onPressed:() {
-                Navigator.pushNamed(context, '/signup');
+                
+                setState(() {
+                  signupPressed = true;
+                });
+                if (agree) {
+                          Navigator.pushNamed(context, '/password');
+                  }
+                
               }, 
             child: const Text('Sign Up', style: TextStyle(color: Colors.white, fontSize: 20),)
            )
 
        
             ],
+        
             ),
             ),
             ]
