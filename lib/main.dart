@@ -3,6 +3,7 @@ import 'package:algora_design/password.dart';
 import 'package:flutter/material.dart';
 
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -134,6 +135,34 @@ class InsurancePage extends StatelessWidget{
       bool agree = false;
       bool signupPressed = false;
 
+      final firstNameController = TextEditingController();
+      final lastNameController = TextEditingController();
+      final emailController = TextEditingController();
+      final numberController = TextEditingController();
+
+      var isFieldInvalid = false;
+
+     
+
+      void submitForm(){
+        setState(() {
+                  signupPressed = true;
+                });
+        if(firstNameController.text.trim().isEmpty || lastNameController.text.trim().isEmpty || 
+        emailController.text.trim().isEmpty || numberController.text.trim().isEmpty ||  agree == false){
+           isFieldInvalid = true;
+           return;
+        }
+
+        
+        Navigator.pushNamed(context, '/password');
+
+
+      }
+
+
+
+
      
 
       @override
@@ -200,6 +229,7 @@ class InsurancePage extends StatelessWidget{
               child: SizedBox( 
               width: 300,
               child: TextFormField(
+              controller: firstNameController,
               decoration: const InputDecoration(
               labelText: 'First name',
               suffixIcon: Padding(
@@ -223,6 +253,7 @@ class InsurancePage extends StatelessWidget{
               child: SizedBox( 
               width: 300,
               child: TextFormField(
+                controller: lastNameController,
               decoration: const InputDecoration(
               labelText: 'Last name',
               suffixIcon: Padding(
@@ -248,6 +279,8 @@ class InsurancePage extends StatelessWidget{
               child: SizedBox( 
               width: 300,
               child: TextFormField(
+                controller: numberController,
+              keyboardType: TextInputType.number,
               decoration: const InputDecoration(
               labelText: 'Phone Number',
               suffixIcon: Padding(
@@ -271,16 +304,17 @@ class InsurancePage extends StatelessWidget{
               child: SizedBox( 
               width: 300,
               child: TextFormField(
-              decoration: const InputDecoration(
+                keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
               labelText: 'Email Address',
-              suffixIcon: Padding(
+              suffixIcon: const Padding(
                  padding: EdgeInsets.only(top: 30.0, left: 15), 
                  child: Icon(Icons.mail_outlined, color: Color(0xFFA2A2A7)),
                 ),
              enabledBorder: UnderlineInputBorder(
-             borderSide: BorderSide(color: Color(0xFFA2A2A7)),
+             borderSide: BorderSide(color: isFieldInvalid? Colors.red : const Color(0xFFA2A2A7)),
             ),
-              focusedBorder: UnderlineInputBorder(
+              focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Color(0xFFA2A2A7)),
             ),
               ),
@@ -340,14 +374,7 @@ class InsurancePage extends StatelessWidget{
               )
             ),
               onPressed:() {
-                
-                setState(() {
-                  signupPressed = true;
-                });
-                if (agree) {
-                          Navigator.pushNamed(context, '/password');
-                  }
-                
+                submitForm();
               }, 
             child: const Text('Sign Up', style: TextStyle(color: Colors.white, fontSize: 20),)
            )

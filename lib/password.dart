@@ -62,9 +62,9 @@ class _Password extends State<Password>{
               ],
             ),
 
-            const SizedBox(height: 80),
+            const SizedBox(height: 60),
            const Text('Enter password', style: TextStyle(fontSize: 15.0)),
-          const SizedBox(height:30.0),
+          const SizedBox(height:40.0),
       
       PinPlusKeyBoardPackage(
     keyboardButtonShape: KeyboardButtonShape.circular,
@@ -80,12 +80,13 @@ class _Password extends State<Password>{
     buttonBorderColor: Colors.white,
     isInputHidden: true,
     btnHasBorder: false,
-    keyboardFontSize: 40,
+    keyboardFontSize: 35,
     keyboardBtnSize: 70,
     inputHiddenColor: const Color(0xFF01B4CB),
     inputHeight: 13,
-    inputsMaxWidth: 65,
+    inputsMaxWidth: 60,
     inputShadowColor: Colors.white,
+    
 
 
     
