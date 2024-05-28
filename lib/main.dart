@@ -136,21 +136,26 @@ class _SignUpState extends State<SignUp> {
   final emailController = TextEditingController();
   final numberController = TextEditingController();
 
-  var isFieldInvalid = false;
+  bool isFirstNameInvalid = false;
+  bool isLastNameInvalid = false;
+  bool isEmailInvalid = false;
+  bool isNumberInvalid = false;
+
+
 
   void submitForm() {
-    setState(() {
+      setState(() {
       signupPressed = true;
-      isFieldInvalid = false;
+      isFirstNameInvalid = firstNameController.text.trim().isEmpty;
+      isLastNameInvalid = lastNameController.text.trim().isEmpty;
+      isEmailInvalid = emailController.text.trim().isEmpty;
+      isNumberInvalid = numberController.text.trim().isEmpty;
     });
 
-    if (firstNameController.text.trim().isEmpty ||
-        lastNameController.text.trim().isEmpty ||
-        emailController.text.trim().isEmpty ||
-        numberController.text.trim().isEmpty || !agree) {
-      setState(() {
-        isFieldInvalid = true;
-      });
+
+
+
+    if (isFirstNameInvalid || isLastNameInvalid || isEmailInvalid || isNumberInvalid || !agree) {
       return;
     }
 
@@ -223,19 +228,19 @@ class _SignUpState extends State<SignUp> {
                           decoration: InputDecoration(
                             labelText: 'First name',
                             labelStyle: TextStyle(
-                                color: isFieldInvalid ? Colors.red : Colors.black),
+                                color: isFirstNameInvalid ? Colors.red : Colors.black),
                             suffixIcon: Padding(
                               padding: const EdgeInsets.only(top: 30.0, left: 15),
                               child: Icon(
                                 Icons.person_2_outlined,
-                                color: isFieldInvalid
+                                color: isFirstNameInvalid
                                     ? Colors.red
                                     : const Color(0xFFA2A2A7),
                               ),
                             ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
-                                  color: isFieldInvalid
+                                  color: isFirstNameInvalid
                                       ? Colors.red
                                       : const Color(0xFFA2A2A7)),
                             ),
@@ -255,19 +260,19 @@ class _SignUpState extends State<SignUp> {
                           decoration: InputDecoration(
                             labelText: 'Last name',
                             labelStyle: TextStyle(
-                                color: isFieldInvalid ? Colors.red : Colors.black),
+                                color: isLastNameInvalid ? Colors.red : Colors.black),
                             suffixIcon: Padding(
                               padding: const EdgeInsets.only(top: 30.0, left: 15),
                               child: Icon(
                                 Icons.person_2_outlined,
-                                color: isFieldInvalid
+                                color: isLastNameInvalid
                                     ? Colors.red
                                     : const Color(0xFFA2A2A7),
                               ),
                             ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
-                                  color: isFieldInvalid
+                                  color: isLastNameInvalid
                                       ? Colors.red
                                       : const Color(0xFFA2A2A7)),
                             ),
@@ -288,19 +293,19 @@ class _SignUpState extends State<SignUp> {
                           decoration: InputDecoration(
                             labelText: 'Phone Number',
                             labelStyle: TextStyle(
-                                color: isFieldInvalid ? Colors.red : Colors.black),
+                                color: isNumberInvalid ? Colors.red : Colors.black),
                             suffixIcon: Padding(
                               padding: const EdgeInsets.only(top: 30.0, left: 15),
                               child: Icon(
                                 Icons.phone,
-                                color: isFieldInvalid
+                                color: isNumberInvalid
                                     ? Colors.red
                                     : const Color(0xFFA2A2A7),
                               ),
                             ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
-                                  color: isFieldInvalid
+                                  color: isNumberInvalid
                                       ? Colors.red
                                       : const Color(0xFFA2A2A7)),
                             ),
@@ -321,19 +326,19 @@ class _SignUpState extends State<SignUp> {
                           decoration: InputDecoration(
                             labelText: 'Email Address',
                             labelStyle: TextStyle(
-                                color: isFieldInvalid ? Colors.red : Colors.black),
+                                color: isEmailInvalid ? Colors.red : Colors.black),
                             suffixIcon: Padding(
                               padding: const EdgeInsets.only(top: 30.0, left: 15),
                               child: Icon(
                                 Icons.mail_outlined,
-                                color: isFieldInvalid
+                                color: isEmailInvalid
                                     ? Colors.red
                                     : const Color(0xFFA2A2A7),
                               ),
                             ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
-                                  color: isFieldInvalid
+                                  color: isEmailInvalid
                                       ? Colors.red
                                       : const Color(0xFFA2A2A7)),
                             ),
