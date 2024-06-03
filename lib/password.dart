@@ -21,7 +21,7 @@ class _Password extends State<Password>{
     final size = MediaQuery.of(context).size;
     return  Scaffold( 
       body: Container(
-      padding: const EdgeInsets.only(top: 40),
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
       child: Column (
        children: [ Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -43,21 +43,29 @@ class _Password extends State<Password>{
                   ),
        
       
-                const SizedBox(width: 140),
+                
                  
-                  RichText(
-                      text: const TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'New User? ',
-                            style: TextStyle(color: Colors.black),
-                          ),
-                          TextSpan(
-                            text: 'Sign Up',
-                            style: TextStyle(color: Color(0xFF01B4CB), decoration: TextDecoration.underline, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
+                  Expanded(
+                    child: Row(
+                      
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        RichText(
+                            text: const TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'New User? ',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                TextSpan(
+                                  text: 'Sign Up',
+                                  style: TextStyle(color: Color(0xFF01B4CB), decoration: TextDecoration.underline, fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                        ),
+                      ],
+                    ),
                   ),
               ],
             ),
@@ -95,8 +103,9 @@ class _Password extends State<Password>{
     
     
     onSubmit: () {
-        /// ignore: avoid_print
-        print("Text is : " + pinInputController.text);
+        // print("Text is : " + pinInputController.text);
+        Navigator.pushNamed(context, '/dashboard');
+
             },
            
              keyboardFontFamily: '',

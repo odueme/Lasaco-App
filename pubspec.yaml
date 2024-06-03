@@ -66,6 +66,16 @@
     assets:
       - Images/Insurance_pic.png
       - Images/Valentine_pic.png
+      - Images/profile.jpg
+      - Images/Frame.png
+      - Images/policies.png
+      - Images/bene.png
+      - Images/claims.png
+      - Images/quotes.png
+      - Images/settings.png
+      - Images/request.png
+      - Images/help.png
+
     #   - images/a_dot_ham.jpeg
 
     # An image asset can refer to one or more resolution-specific "variants", see

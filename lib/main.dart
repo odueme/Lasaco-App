@@ -1,3 +1,4 @@
+import 'package:algora_design/dashboard.dart';
 import 'package:algora_design/password.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/insurance': (context) => const InsurancePage(),
         '/signup': (context) => const SignUp(),
-        '/password': (context) => const Password()
+        '/password': (context) => const Password(),
+        '/dashboard': (context) => const Dashboard()
       },
     );
   }
@@ -189,25 +191,33 @@ class _SignUpState extends State<SignUp> {
                       color: Color(0xFF01B4CB),
                     ),
                   ),
-                  const SizedBox(width: 140),
-                  RichText(
-                    text: const TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Have an account? ',
-                          style: TextStyle(color: Colors.black),
-                        ),
-                        TextSpan(
-                          text: 'Sign In',
-                          style: TextStyle(
-                              color: Color(0xFF01B4CB),
-                              decoration: TextDecoration.underline,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
+                  
+                  Expanded(
+                    child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [ 
+                    
+                     RichText(
+                      text: const TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'Have an account? ',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          TextSpan(
+                            text: 'Sign In',
+                            style: TextStyle(
+                                color: Color(0xFF01B4CB),
+                                decoration: TextDecoration.underline,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
                     ),
+                                    ],
+                                  ),
                   ),
-                ],
+                ]
               ),
               const SizedBox(height: 60.0),
               Container(
