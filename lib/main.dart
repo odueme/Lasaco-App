@@ -1,5 +1,7 @@
-import 'package:algora_design/dashboard.dart';
+
+import 'package:algora_design/motor_insurance.dart';
 import 'package:algora_design/password.dart';
+import 'package:algora_design/tabs_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +22,8 @@ class MyApp extends StatelessWidget {
         '/insurance': (context) => const InsurancePage(),
         '/signup': (context) => const SignUp(),
         '/password': (context) => const Password(),
-        '/dashboard': (context) => const Dashboard()
+        '/dashboard': (context) => const TabsScreen(),
+        '/motor_insurance': (context) => const MotorInsurance()
       },
     );
   }
