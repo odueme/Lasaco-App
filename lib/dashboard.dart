@@ -1,5 +1,5 @@
-// import 'package:algora_design/motor_insurance.dart';
 import 'package:algora_design/policies.dart';
+import 'package:algora_design/settings.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -10,7 +10,11 @@ class Dashboard extends StatelessWidget {
       case 0:
         Navigator.push(context, MaterialPageRoute(builder: (ctx) => const Policies()));
         break;
-      // Add other cases if necessary
+        case 6: 
+          Navigator.push(context, MaterialPageRoute(builder: (ctx) => const Settings()));
+          break;
+      
+      
     }
   }
 
@@ -174,7 +178,7 @@ class Dashboard extends StatelessWidget {
                                           color: Colors.black26,
                                           spreadRadius: 4,
                                           blurRadius: 20,
-                                          offset: const Offset(0, 8), // changes position of shadow
+                                          offset: Offset(0, 8), // changes position of shadow
                                         ),
                                       ],
                                     ),
@@ -197,38 +201,7 @@ class Dashboard extends StatelessWidget {
                 ),
               ],
             ),
-            // Positioned(
-            //   bottom: 0,
-            //   left: 0,
-            //   right: 0,
-            //   child: Container(
-            //     padding: const EdgeInsets.all(13),
-            //     decoration: BoxDecoration(
-            //       color: Colors.white,
-            //       boxShadow: [
-            //         BoxShadow(
-            //           color: Colors.grey.withOpacity(0.5),
-            //           spreadRadius: 2,
-            //           blurRadius: 15,
-            //           offset: const Offset(0, 3), // changes position of shadow
-            //         ),
-            //       ],
-            //     ),
-            //     child: const Padding(
-                  
-            //       padding: EdgeInsets.symmetric(horizontal: 20.0),
-            //       child: Row(
-            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //         children: [
-            //            Image(image: AssetImage('Images/Home.png'),),
-            //            Image(image: AssetImage('Images/products.png'),),
-            //            Image(image: AssetImage('Images/contact.png'),),
-            //            Image(image: AssetImage('Images/accounts.png'),)
-            //         ]
-            //         ),
-            //     )
-            //   ),
-            // ),
+
           ],
         ),
       ),

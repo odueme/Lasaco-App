@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-class MotorInsurance extends StatelessWidget {
-  const MotorInsurance({super.key});
+class TravelInsurance extends StatelessWidget {
+  const TravelInsurance({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +62,7 @@ class MotorInsurance extends StatelessWidget {
                         Image(image: AssetImage('Images/motor.png')),
                         SizedBox(width: 8),
                         Text(
-                          'Motor Insurance',
+                          'Travel Insurance',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,

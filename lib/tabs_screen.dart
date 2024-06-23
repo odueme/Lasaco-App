@@ -1,4 +1,5 @@
 import 'package:algora_design/dashboard.dart';
+import 'package:algora_design/policies_page.dart';
 import 'package:flutter/material.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -14,10 +15,10 @@ class _TabsScreen extends State<TabsScreen> {
 
   final List<Widget> _pages = [
     const Dashboard(),
-    // Add other pages here
-    Container(color: Colors.blue), // Example placeholder page
-    Container(color: Colors.green), // Example placeholder page
-    Container(color: Colors.red), // Example placeholder page
+   
+    const PoliciesPage(),
+    Container(color: Colors.green), 
+    Container(color: Colors.red), 
   ];
 
   void _selectPage(int index) {
